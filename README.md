@@ -1,4 +1,4 @@
-# aglio-theme-olio-printing
+# aglio-theme-olio-printing-nav
 a printable olio-based theme (with attributes instead of schema)
 
 Daniel Taylor's [aglio](https://github.com/danielgtaylor/aglio) tool is a nice
@@ -8,17 +8,19 @@ repo contains a modified version of [olio-attributes](https://github.com/hajimen
 for printing. Changes:
 
 - @hajimeni's changes in https://github.com/hajimeni/aglio-theme-olio-attributes to add attributes to the aglio output
-- removal of the schema's (in favor of attributes only)
-- removal of the nav bar
-- removal of the 'back to top' floating text
-- expand all by default
+- @BenGardiner's changes in https://github.com/BenGardiner/aglio-theme-olio-printing to add attributes to the aglio output
+- added back nav
+- allow non-full width for default template
+- added back the back to top floater
+- remove table of contents to the output for default template
+- always show resources title
 
 # Quickstart
 
 ```bash
 $ sudo npm install -g aglio
-$ sudo npm install -g aglio-theme-olio-attributes
-$ aglio -t olio-attributes -i blueprint.apib -o MyAPI.html
+$ sudo npm install -g aglio-theme-olio-printing-nav
+$ aglio -t olio-printing-nav -i blueprint.apib -o MyAPI.html
 ```
 
 # Original License
@@ -33,4 +35,8 @@ http://dgt.mit-license.org/
 
 This package is incremental changes on top of [@hajimeni aglio-theme-olio-attributes](https://github.com/hajimeni/aglio-theme-olio-attributes)
 
-This packages (as changes to @hajimeni aglio-theme-olio-attributes) was developed with support from the [National Motor Freight Traffic Association](http://www.nmfta.org) to produce standalone documentation for the [Open Telematics API](https://github.com/nmfta-repo/nmfta-opentelematics-api)
+This package is incremental changes on top of [@BenGardiner aglio-theme-olio-printing](https://github.com/BenGardiner/aglio-theme-olio-printing)
+
+This package also referencing changes from [@onlicar aglio-theme-onlicar](https://github.com/onlicar/aglio-theme-onlicar) which is [this commit](https://github.com/onlicar/aglio-theme-onlicar/commit/8fa8005dacf95853788bb082de88e2a7ce4baaec)
+
+This packages (as changes to @BenGardiner aglio-theme-olio-printing) was developed with support from the [National Motor Freight Traffic Association](http://www.nmfta.org) to produce standalone documentation for the [Open Telematics API](https://github.com/nmfta-repo/nmfta-opentelematics-api)

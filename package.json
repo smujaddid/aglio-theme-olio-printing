@@ -1,6 +1,6 @@
 {
-  "name": "aglio-theme-olio-printing",
-  "version": "0.0.1",
+  "name": "aglio-theme-olio-printing-nav",
+  "version": "0.1.0",
   "description": "a printable olio-based theme (with attributes instead of schema)",
   "main": "lib/main.js",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BenGardiner/aglio-theme-olio-printing"
+    "url": "https://github.com/smujaddid/aglio-theme-olio-printing"
   },
   "keywords": [
     "api",
@@ -30,9 +30,9 @@
   "author": "Ben Gardiner <ben.l.gardiner@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BenGardiner/aglio-theme-olio-printing/issues"
+    "url": "https://github.com/smujaddid/aglio-theme-olio-printing/issues"
   },
-  "homepage": "https://github.com/BenGardiner/aglio-theme-olio-printing",
+  "homepage": "https://github.com/smujaddid/aglio-theme-olio-printing",
   "dependencies": {
     "coffee-script": "^1.8.0",
     "highlight.js": "^8.4.0",
@@ -44,7 +44,7 @@
     "markdown-it-container": "^1.0.0",
     "markdown-it-emoji": "^1.0.0",
     "moment": "^2.8.4",
-    "stylus": "^0.51.1"
+    "stylus": "^0.54.8"
   },
   "devDependencies": {
     "chai": "^3.0.0",
