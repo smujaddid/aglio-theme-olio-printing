@@ -863,16 +863,22 @@ nav .resource-group{
 }
 
 table.attributes-list {
-  color: @note-text-color;
-  border-left: 2px solid @note-border-color;
+    color: @right-text-color;
+    border-left: 2px solid @note-border-color;
 
-  & tr.attributes-head > td,th {
-    background-color: @note-background-color;
-  }
-  & tr.attributes-body > td,th {
-    background-color: @background-color;
-  }
-  & td.attributes-cell {
-    background-color: @background-color;
-  }
+    & tr.attributes-head > td,th {
+        background-color: @right-tabs-background-color;
+        border: 1px solid @right-tabs-background-color;
+    }
+    & tr.attributes-body > td,th {
+        background-color: @right-tabs-active-background-color;
+        border: 1px solid @right-tabs-active-background-color;
+        & p {
+            color: @right-text-color;
+            margin-bottom: 0;
+        }
+    }
+    & td.attributes-cell {
+        background-color: @right-tabs-background-color;
+    }
 }
