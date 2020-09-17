@@ -11,6 +11,9 @@ html
     body.preload
         div(class='container-fluid')
             .row
+                block nav   
+                    +Nav(false) 
+                    
                 .content
                     block content
                         +Content('primary', false)
