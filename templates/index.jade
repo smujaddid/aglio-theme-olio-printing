@@ -9,6 +9,9 @@ html
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
         style!= self.css
     body.preload
+        a.text-muted.back-to-top(href='#top')   
+            i.fa.fa-toggle-up   
+            | &nbsp;Back to top
         div(class=self.fullWidth ? 'container-fluid' : 'container')
             .row
                 block nav   
