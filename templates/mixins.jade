@@ -165,12 +165,13 @@ mixin Content()
                     each action in resource.actions || []
                         .action(class=action.methodLower, id=action.elementId)
                             h4.action-heading
-                                .name!= action.name
+                                != action.name
+                            if action.description
+                                != self.markdown(action.description)
+                            h4.action-uri
                                 a.method(class=action.methodLower, href=action.elementLink)
                                     = action.method
                                 code.uri= self.urldec(action.uriTemplate)
-                            if action.description
-                                != self.markdown(action.description)
 
                             h4 Example URI
                             .definition
@@ -265,12 +266,16 @@ mixin ContentTriple()
                 .middle
                     .action(class=action.methodLower, id=action.elementId)
                         h4.action-heading
-                            .name!= action.name
+                            != action.name
+                        if action.description
+                            != self.markdown(action.description)
+
+                        .title
+                            strong URI Template
+                        h4.action-uri
                             a.method(class=action.methodLower, href=action.elementLink)
                                 = action.method
                             code.uri= self.urldec(action.uriTemplate)
-                        if action.description
-                            != self.markdown(action.description)
 
                         //- A list of sub-sections for parameters, requests
                         //- and responses.

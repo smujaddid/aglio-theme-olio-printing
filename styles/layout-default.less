@@ -485,6 +485,7 @@ nav {
 
 .triple .resource-heading {
   font-size: 125%;
+  padding-top: @padding;
 }
 
 .definition {
@@ -691,8 +692,10 @@ nav {
     border: none;
 
     h2.group-heading, .heading a {
-        margin: 0 0 @padding 0;
-        border: 1px solid @group-border-color;
+        margin: 0;
+        border: none;
+        background-color: @group-background-color;
+        padding: @padding 0 @padding 0;
     }
 }
 
@@ -709,65 +712,34 @@ nav .resource-group{
 
 .action {
     margin-bottom: @padding;
-    padding: @padding @padding 0 @padding;
+    padding: @padding @padding @padding @padding;
     overflow: hidden;
     border: 1px solid transparent;
     border-radius: @border-radius;
 
     h4.action-heading {
-        padding: @padding / 2 @padding;
+        padding: @padding @padding @padding @padding;
         margin: -@padding -@padding @padding -@padding;
-        border-bottom: 1px solid transparent;
+        // border-bottom: 1px solid @get-border-color;
         border-top-left-radius: @border-radius;
         border-top-right-radius: @border-radius;
         overflow: hidden;
+        // background: @get-background-color;
+        // border-bottom-color: @get-border-color;
+    }
 
-        .name {
-            float: right;
-            font-weight: normal;
-            padding: @padding / 2 0;
-        }
+    h4.action-uri {
+        padding: @padding / 2 @padding;
+        margin: -@padding -@padding @padding -@padding;
+        border-bottom: 1px solid transparent;
+        overflow: hidden;
 
         .method {
             padding: @padding / 2 @padding;
-            margin-right: @padding;
+            // margin-right: @padding;
             border-radius: ceil(@border-radius / 2);
             display: inline-block;
-
-            &.get {
-                color: contrast(@get-color);
-                background-color: @get-color;
-            }
-
-            &.head {
-                color: contrast(@head-color);
-                background-color: @head-color;
-            }
-
-            &.options {
-                color: contrast(@options-color);
-                background-color: @options-color;
-            }
-
-            &.put {
-                color: contrast(@put-color);
-                background-color: @put-color;
-            }
-
-            &.patch {
-                color: contrast(@patch-color);
-                background-color: @patch-color;
-            }
-
-            &.post {
-                color: contrast(@post-color);
-                background-color: @post-color;
-            }
-
-            &.delete {
-                color: contrast(@delete-color);
-                background-color: @delete-color;
-            }
+            font-size: 12px;
         }
 
         code {
@@ -775,6 +747,7 @@ nav .resource-group{
             background-color: @title-code-background-color;
             border-color: @title-code-border-color;
             font-weight: normal;
+            font-size: 12px;
             word-break: break-all;
             display: inline-block;
             margin-top: 2px;
