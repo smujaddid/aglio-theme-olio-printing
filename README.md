@@ -14,6 +14,7 @@ for printing. Changes:
 - added back the back to top floater
 - remove table of contents to the output for default template
 - always show resources title
+- preserve original body contents in action section [@Gasol aglio-theme-olio](https://github.com/Gasol/aglio-theme-olio/commit/1d5c1775b07b139aeecb3e5c4852b3b35bcd9a4d)
 
 # Quickstart
 
@@ -38,5 +39,7 @@ This package is incremental changes on top of [@hajimeni aglio-theme-olio-attrib
 This package is incremental changes on top of [@BenGardiner aglio-theme-olio-printing](https://github.com/BenGardiner/aglio-theme-olio-printing)
 
 This package also referencing changes from [@onlicar aglio-theme-onlicar](https://github.com/onlicar/aglio-theme-onlicar) which is [this commit](https://github.com/onlicar/aglio-theme-onlicar/commit/8fa8005dacf95853788bb082de88e2a7ce4baaec)
+
+This package also referencing changes from [@Gasol aglio-theme-olio](https://github.com/Gasol/aglio-theme-olio) which is [this commit](https://github.com/Gasol/aglio-theme-olio/commit/1d5c1775b07b139aeecb3e5c4852b3b35bcd9a4d)
 
 This packages (as changes to @BenGardiner aglio-theme-olio-printing) was developed with support from the [National Motor Freight Traffic Association](http://www.nmfta.org) to produce standalone documentation for the [Open Telematics API](https://github.com/nmfta-repo/nmfta-opentelematics-api)
