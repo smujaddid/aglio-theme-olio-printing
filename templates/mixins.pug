@@ -115,14 +115,16 @@ mixin RequestResponseBody(request, collapse, showBlank)
                         if index < request.headers.length - 1
                           br
                 div(style="height: 1px;")
-                div(class='attributesKitContainer') !{request.attributes}
-                div(style="height: 20px;")
+                //div(class='attributesKitContainer') !{request.attributes}
+                //div(style="height: 20px;")
             if request.body
                 h5 Body
                 pre: code
                     != self.highlight(request.body, null, ['json', 'yaml', 'xml', 'javascript'])
                 div(style="height: 1px;")
             if request.schema
+                h5 Attributes
+                +AttributeTable(JSON.parse(request.schema))
                 div(class='rawExampleHeaderLabelJsonSchema')
                     span Schema
                     div(class='showJSONSchemaButton')
