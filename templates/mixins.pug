@@ -294,41 +294,102 @@ mixin ContentTriple()
 
                 hr.split
 
+- 
+  function getItemProperties(item) {
+      if (typeof item === 'undefined')
+          return []
+      if ('properties' in item)
+          return item.properties
+      if ('items' in item)
+          return getItemProperties(item.items)
+      return []
+  }
+
+-
+  function formatEnumValues(items) {
+      if (Array.isArray(items))
+          return 'enum: ' + items.join(', ')
+      return 'enum [ ]'
+  }
+
+-
+  function formatArrayTypes(items) {
+      if (typeof items === 'undefined')
+          return 'array'
+      if (Array.isArray(items)) {
+          types = items.map(x => x.type)
+          return 'array [ ' + types.join(' | ') + ' ]'
+      }
+      if ('type' in items)
+          return 'array [ ' + items.type + ' ]'
+      return 'array'
+  }
+
+-
+  function isNullable(item) {
+      if (typeof item === 'undefined')
+          return false
+      if (Array.isArray(item) && item.indexOf('null') >= 0)
+          return true
+      return false
+  }
+
+-
+  function getPropertyType(prop) {
+      if (typeof prop === 'undefined')
+          return 'string'
+      if (prop.type === 'undefined')
+          return 'string'
+      if (prop.enum)
+          return formatEnumValues(prop.enum)
+      if (Array.isArray(prop.type) && prop.type.length >= 0)
+          return prop.type[0]
+      if (prop.type === 'array')
+          return formatArrayTypes(prop.items)
+      return prop.type
+  }
+
 mixin AttributeTable(schema)
     table.attributes-list(style="width: 100%;")
         thead.attributes-header
-            each props, name in schema.properties || []
+
+            each props, name in getItemProperties(schema)
                 tr.attributes-head
                     td
                         strong= self.urldec(name)
                     td.attribute-type
-                        != props.type ? (props.enum ? 'enum' : props.type) : 'string'
+                        != props.type ? getPropertyType(props) : 'string'
                     td
                         if schema.required && schema.required.indexOf(name) >= 0
                             span.required-field (required)
+                        else if schema.items && schema.items.required && schema.items.required.indexOf(name) >= 0
+                            span.required-field (required)
                         else
-                            span.optional-field (optional)
+                            if isNullable(props.type)
+                                span.optional-field (nullable)
+                            else
+                                span.optional-field (optional)
 
-                    td
-                        ul
-                            if props.default
-                                li.text-info.default
-                                    strong Default:&nbsp;
-                                    span= props.default
+                    // td
+                        // ul
+                            // if props.default
+                                // li.text-info.default
+                                    //- strong Default:&nbsp;
+                                    // span= props.default
 
-                            if props.example
-                                li.text-muted.example
-                                    strong Example:&nbsp;
-                                    span= props.example
+                            // if props.example
+                                // li.text-muted.example
+                                    //- strong Example:&nbsp;
+                                    // span= props.example
 
-                            if props.enum
-                                li.choices
-                                    strong Choices:&nbsp;
-                                    ul
-                                        each value in props.enum
-                                            li
-                                                code= self.urldec(value)
-                                                = ' '
+                            // if props.enum
+                                // li.choices
+                                    //- strong Choices:&nbsp;
+                                    // ul
+                                        // each value in props.enum
+                                            // li
+                                                // code= self.urldec(value)
+                                                // = ' '
 
                 if props.description
                     tr.attributes-body
