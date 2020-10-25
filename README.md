@@ -16,12 +16,17 @@ for printing. Changes:
 - always show resources title
 - preserve original body contents in action section [@Gasol aglio-theme-olio](https://github.com/Gasol/aglio-theme-olio/commit/1d5c1775b07b139aeecb3e5c4852b3b35bcd9a4d)
 
+# Notes
+
+Supported template: triple
+Supported theme: flatly
+
 # Quickstart
 
 ```bash
 $ sudo npm install -g aglio
 $ sudo npm install -g aglio-theme-olio-printing-nav
-$ aglio -t olio-printing-nav -i blueprint.apib -o MyAPI.html
+$ aglio --theme-template triple --theme-variables flatly -t olio-printing-nav -i blueprint.apib -o MyAPI.html
 ```
 
 # Original License
