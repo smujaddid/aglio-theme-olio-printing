@@ -18,8 +18,8 @@ for printing. Changes:
 
 # Notes
 
-Supported template: triple
-Supported theme: flatly
+- Supported template: triple
+- Supported theme: flatly
 
 # Quickstart
 
