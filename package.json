@@ -1,6 +1,6 @@
 {
   "name": "aglio-theme-olio-printing-nav",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "a printable olio-based theme (with attributes instead of schema)",
   "main": "lib/main.js",
   "scripts": {
