@@ -53,7 +53,7 @@
     "chai": "^4.2.0",
     "coffeescript": "^2.5.1",
     "coveralls": "^3.1.0",
-    "drafter.js": "^2.6.7",
+    "drafter.js": "^3.2.0",
     "istanbul": "^0.4.5",
     "mocha": "^8.2.1",
     "rimraf": "^3.0.2"
