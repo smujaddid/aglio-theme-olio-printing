@@ -43,7 +43,7 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-emoji": "^2.0.0",
     "moment": "^2.18.1",
-    "pug": "^2.0.0-rc.3",
+    "pug": "^3.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "stylus": "^0.54.5"
