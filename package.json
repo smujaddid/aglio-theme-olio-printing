@@ -52,7 +52,7 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "coffeelint": "^1.7.1",
-    "coveralls": "^2.11.2",
+    "coveralls": "^3.1.0",
     "drafter.js": "^2.6.7",
     "istanbul": "^0.3.6",
     "mocha": "^2.0.1",
