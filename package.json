@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@coffeelint/cli": "^4.1.2",
-    "chai": "^3.0.0",
+    "chai": "^4.2.0",
     "coffeescript": "^1.12.7",
     "coveralls": "^3.1.0",
     "drafter.js": "^2.6.7",
