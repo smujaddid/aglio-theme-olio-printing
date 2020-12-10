@@ -48,7 +48,7 @@ slug = (cache={}, value='', unique=false) ->
       # Already exists, so let's try to make it unique.
       if sluggified.match /\d+$/
         sluggified = sluggified.replace /\d+$/, (value) ->
-          parseInt(value) + 1
+          parseInt(value, 10) + 1
       else
         sluggified = sluggified + '-1'
 
