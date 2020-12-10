@@ -5,4 +5,3 @@ coverage
 cache
 .envrc
 .nvmrc
-package-lock.json
