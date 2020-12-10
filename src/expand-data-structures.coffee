@@ -11,12 +11,14 @@ module.exports = expandDS = (root, dataStructures) ->
     when 'boolean', 'string', 'number', 'enum'
       break
     when 'member'
-      valueOfContent = clonedRoot['content']['value']
-      newValue = expandDS(valueOfContent, dataStructures)
-      clonedRoot.content['value'] = newValue
+      if clonedRoot['content']
+        valueOfContent = clonedRoot['content']['value']
+        newValue = expandDS(valueOfContent, dataStructures)
+        clonedRoot.content['value'] = newValue
     when 'object'
-      for item, index in clonedRoot.content
-        clonedRoot.content[index] = expandDS(item, dataStructures)
+      if clonedRoot.content
+        for item, index in clonedRoot.content
+          clonedRoot.content[index] = expandDS(item, dataStructures)
     when 'array'
       if clonedRoot.content
         for valueOfArray, keyOfArray in clonedRoot.content
