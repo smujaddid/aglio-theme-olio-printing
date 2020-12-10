@@ -56,6 +56,6 @@
     "drafter.js": "^2.6.7",
     "istanbul": "^0.4.5",
     "mocha": "^8.2.1",
-    "rimraf": "^2.4.1"
+    "rimraf": "^3.0.2"
   }
 }
