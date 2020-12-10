@@ -1,5 +1,5 @@
 {assert} = require 'chai'
-jade = require 'jade'
+jade = require 'pug'
 rimraf = require 'rimraf'
 theme = require '../lib/main'
 
