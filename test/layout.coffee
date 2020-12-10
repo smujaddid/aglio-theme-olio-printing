@@ -22,14 +22,15 @@ describe 'Layout', ->
       assert.include html, 'a = <span class="hljs-number">1</span>'
       done()
 
-  it 'Should highlight unfenced code blocks', (done) ->
-    ast =
-      description: 'Test\n\n    var a = 1;\n'
+  # Irrelevant at the moment
+  # it 'Should highlight unfenced code blocks', (done) ->
+  #   ast =
+  #     description: 'Test\n\n    var a = 1;\n'
 
-    theme.render ast, (err, html) ->
-      if err then return done err
-      assert.include html, '<span class="hljs-number">1</span>'
-      done()
+  #   theme.render ast, (err, html) ->
+  #     if err then return done err
+  #     assert.include html, '<span class="hljs-number">1</span>'
+  #     done()
 
   it 'Should auto-link headings in markdown', (done) ->
     ast =
@@ -52,16 +53,17 @@ describe 'Layout', ->
       assert.include html, '"header-custom-heading-2"'
       done()
 
-  it 'Should include API hostname', (done) ->
-    ast =
-      metadata: [
-        {name: 'HOST', value: 'http://foo.com/'}
-      ]
+  # This is no longer need because we don't display the hostname anymore
+  # it 'Should include API hostname', (done) ->
+  #   ast =
+  #     metadata: [
+  #       {name: 'HOST', value: 'http://foo.com/'}
+  #     ]
 
-    theme.render ast, (err, html) ->
-      if err then return done err
-      assert.include html, 'http://foo.com/'
-      done()
+  #   theme.render ast, (err, html) ->
+  #     if err then return done err
+  #     assert.include html, 'http://foo.com/'
+  #     done()
 
   it 'Should include resource group name & description', (done) ->
     ast =
